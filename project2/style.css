@@ -6,13 +6,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-/*body {
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(228, 228, 228);
-}*/
+html {
+    font-size: 62.5%;
+}
 section {
     position: relative;
     min-height: 100vh;
@@ -22,7 +18,7 @@ section {
     align-items: center;
     justify-content: center;
 }
-section::before {
+section::before { /* this whole after and before part is coppied */
     content: "";
     position: absolute;
     height: 240px;
@@ -38,13 +34,167 @@ section::after {
     width: 240px;
     border-radius: 50%;
     transform: translate(150px, 100px);
-    background: linear-gradient(90deg, #9c27b0, #f2f5f5);
+    background: linear-gradient(-90deg, #9c27b0, #f2f5f5);
 }
+
+.card {
+    width: 375px;
+    height: 236px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s ease;
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card:active {
+    transform: scale(1.05) rotateY(180deg);
+}
+
 .master-card {
-    border: 1px solid;
-    border-radius: 5%;
-    padding: 12px;
+    color: #f2f5f5;
+    position: relative;
+    width: 375px;
+    height: 236px;
+    z-index: 1;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+    background-color: rgb(255, 255, 255, 0.12); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* apple and safari both create dumb problems :( */ 
+    
 }
-.card-main .number-text{
-    size: 5px;
+p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
+
+#master-card-front {
+    position: absolute;
+}
+.master-card .card-header {
+    height: 60px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.card-header .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-header .header-left .master-card-img {
+    display: block; /* ok so this is very important, for images use display: block else due to defult behaviour things might break and you will not even know why things are breaking. */
+    height: auto; /* i don't actually need to write height but good practice for understanding code */
+    width: 50px;
+}
+.card-header .header-left .master-card-text {
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 500;
+}
+.card-header .sim-card {
+    display: block;
+    width:  70px;
+    height: auto;
+}
+
+.master-card .card-main {
+    height: 80px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-main .number-text {
+    font-size: 1rem;
+}
+.card-main .number {
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+}
+
+.master-card .card-footer {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.card-footer .name {
+    font-size: 1.8rem;
+}
+.card-footer .footer-right {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.card-footer .footer-right .date-valid-text {
+    font-size: 1rem;
+}
+.card-footer .footer-right .date {
+    font-size: 1.5rem;
+}
+
+
+#master-card-back {
+    position: absolute;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.master-card .customer-service {
+    font-size: 1rem;
+    padding: 15px;
+    
+}
+.master-card .magnetic-strip {
+    height: 20%;
+    width: 100%;
+    background-color: black;
+}
+.master-card .signature-area {
+    margin: 20px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.signature-area .signature {
+    position: relative;
+    width: 70%;
+    height: 35px;
+    z-index: 1;
+    border-radius: 4px;
+    background: aliceblue;
+}
+.signature-area .signature::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+        0deg,
+        #e0e0e0 3px,
+        #e0e0e0 9px,
+        #f5f5f5 9px,
+        #f5f5f5 15px
+    );
+}
+.signature-area .number-on-back-of-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #121321;
+    transform: translateX(-10%);
+}
+

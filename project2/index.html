@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
 <section>
-    <!-- <div class="master-card">
+<div class="card">
+    <div class="master-card" id="master-card-front">
         <div class="card-header">
-            <i class='bx bxl-mastercard'></i>
-            Master Card
-
+            <div class="header-left">
+                <img src="masterCard.png" alt="image of master card" class="master-card-img">
+                <p class="master-card-text">Master Card</p>
+            </div>
+            <img src="sim.png" alt="image of sim card" class="sim-card">
         </div>
         <div class="card-main">
-            <span class="number-text">Card Number</span>
-            <span class="number">2023 1254 2314 4214</span>
+            <p class="number-text">Card Number</p>
+            <p class="number">2023 1256 2317 4219</p>
         </div>
         <div class="card-footer">
-            <span class="name">
+            <p class="name">
                 Prem Kumar Shahi
-            </span>
-            <span class="date-valid-text">
-                Valid thru
-            </span>
-            <span class="date">
-                03/30
-            </span>
+            </p>
+            <div class="footer-right">
+                <p class="date-valid-text">
+                    Valid thru
+                </p>
+                <p class="date">
+                    03/30
+                </p>
+            </div>
         </div>
-    </div> -->
+    </div>
+    <div class="master-card" id="master-card-back">
+        <p class="customer-service">For help, try remembering your PIN</p>
+        <div class="magnetic-strip"></div>
+        <div class="signature-area">
+            <div class="signature">cat</div>
+            <i class="number-on-back-of-card">028</i>
+        </div>
+        <p class="contact-us">Unauthorized use will be ignored</p>
+    </div>
+</div>
 </section>
+<!-- -->
 </body>
 </html>
